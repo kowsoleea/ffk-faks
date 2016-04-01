@@ -1,0 +1,16 @@
+//autoprefixer: > 5%
+
+#all-content {
+    width: 100%;
+    min-height: 30px;
+    background-color: teal;
+}
+
+@breakpoint-big: 960px;
+
+@media screen and (min-width: @breakpoint-big) {
+    #all-content {
+        width: @breakpoint-big;
+        margin: 0 auto;
+    }
+}
