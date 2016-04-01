@@ -1,0 +1,239 @@
+//autoprefixer: > 5%
+
+@header-bg: #feee88;
+@greeting-bg: #013e08;
+@nav-bg: #185d23;
+@footer-bg: #013e08;
+@info-bg: #feee88;
+@news-bg: lighten(@info-bg, 10%);
+@text-light: #f0fc6e;
+@text-dark: #4d2c04;
+@text-heading: #de4800;
+
+
+body, p, h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+
+#main {
+    width: 100%;
+    font-family: 'Pontano Sans', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 290px;
+}
+
+nav {
+    width: 100%;
+    order: 0;
+    height: 1.1em;
+    background-image: linear-gradient(to bottom, @nav-bg, black);
+    padding: 0.4em 0;
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline;
+        a {
+            text-decoration: none;
+            color: @text-light;
+            padding: 0 0.4em;
+            &:hover {
+                color: @text-heading;
+            }
+        }
+    }
+}
+
+header {
+    width: 100%;
+    order: 1;
+    font-family: 'Julius Sans One', sans-serif;
+    background-color: @header-bg;
+    display: flex;
+    flex-wrap: nowrap;
+    #logo {
+        display: none;
+    }
+    #title {
+        width: 100%;
+        font-size: x-large;
+        padding: 0.4em;
+        color: @text-heading;
+    }
+}
+
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.6em;
+    color: @text-heading;
+    text-align: center;
+}
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    color: @text-heading;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#greeting {
+    width: 100%;
+    order: 2;
+    padding: 1em;
+    background-color: @greeting-bg;
+    display: flex;
+    flex-wrap: wrap;
+    hyphens: auto;
+    color: @text-light;
+    h1 {width: 100%}
+    #bild-vs {
+        width: 100%;
+        margin: 1em 0;
+        img { width: 100%; }
+        p {
+            font-size: 85%;
+            text-align: center;
+            margin: 0;
+        }
+    }
+    #text-greeting {
+        width: 100%;
+    }
+}
+
+
+#news {
+    background-color: @news-bg;
+    width: 100%;
+    order: 3;
+    h1 {
+        margin: 2em 0.5em 0.5em 0.5em;
+    }
+    .newsitem {
+        margin: 0 0 2em 0;
+    }
+    p {
+        margin: 1em;
+    }
+}
+
+#info {
+    width: 100%;
+    order: 4;
+    background-color: @info-bg;
+    padding: 1em 0.5em;
+    li {list-style: circle;}
+    h1 {padding-bottom: 1em;}
+    p {padding-bottom: 0.5em;}
+    p.red {color: @text-heading;}
+}
+
+footer {
+    width: 100%;
+    order: 5;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 85%;
+    padding: 1em 1em;
+    background-color: @footer-bg;
+    color: @text-light;
+    h1 {width: 100%; padding-bottom: 0.5em;}
+    #adresse {width: 100%;padding-bottom: 1em;}
+    #beitritt {
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+        a {
+            text-decoration: none;
+            color: @text-heading;
+        }
+    }
+}
+
+//
+//media queries ----------------------------
+//
+@media screen and  (min-width: 450px) {
+    body {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: floralwhite;
+    }
+    nav {
+        text-align: center;
+    }
+    header {
+        #logo {
+            display: block;
+            width: 20%;
+            align-self: center;
+            img {
+                width: 100%;
+                max-height: 90px;
+            }
+        }
+        #title {
+            font-size: 1.5em;
+        }
+    }
+    #info {
+        #info-text {
+            column-count: 2;
+        }
+    }
+}
+
+@media screen and  (min-width: 620px) {
+    header {
+        #logo {
+            img {
+                max-height: 120px;
+            }
+        }
+        #title {
+            font-size: 2em
+        }
+    }
+    #greeting {
+        #bild-vs {
+            width: 47%;
+            padding-right: 10px;
+        }
+        #text-greeting {
+            width: 47%;
+            align-self: center;
+            padding-left: 10px;
+        }
+    }
+    #info {
+        #info-text {
+            column-count: 3;
+        }
+    }
+    footer {
+        #adresse {
+            width: 55%;
+        }
+    }
+}
+//
+// last breakpoint ----------------------------------
+//
+@media screen and (min-width: 950px) {
+    header {
+        #logo {
+            img {
+                max-height: 200px;
+            }
+        }
+        #title {
+            font-size: 2.5em;
+        }
+    }
+    #main {
+        width: 950px;
+        margin: 0 auto;
+    }
+}
